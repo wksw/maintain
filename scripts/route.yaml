@@ -1,0 +1,110 @@
+services:
+  account-microservice:
+    dependices:
+      auth-microservice:
+        version: 0.2.0
+      fileserver-microservice:
+        version: 0.1.8
+      message-microservice:
+        version: 0.1.10
+      public-microservice:
+        version: 0.1.0
+      sync-microservice:
+        version: 0.1.8
+    name: 账户服务
+    upgraded: false
+    version: 0.1.10
+  audit-microservice:
+    name: 审计服务
+    upgraded: true
+    version: 0.1.8
+  auth-microservice:
+    dependices:
+      account-microservice:
+        version: 0.1.10
+      login-microservice:
+        version: 0.2.0
+    name: 认证服务
+    upgraded: false
+    version: 0.2.0
+  cloud-microservice:
+    dependices:
+      auth-microservice:
+        version: 0.2.0
+      fileserver-microservice:
+        version: 0.1.8
+    name: 云服务
+    upgraded: false
+    version: 0.2.0
+  fileserver-microservice:
+    dependices:
+      auth-microservice:
+        version: 0.2.0
+    name: 文件服务
+    upgraded: false
+    version: 0.1.8
+  gateway-microservice:
+    dependices:
+      account-microservice:
+        version: 0.1.10
+      audit-microservice:
+        version: 0.1.7
+      auth-microservice:
+        version: 0.2.0
+      cloud-microservice:
+        version: 0.2.0
+      fileserver-microservice:
+        version: 0.1.8
+      login-microservice:
+        version: 0.2.0
+      message-microservice:
+        version: 0.1.10
+      public-microservice:
+        version: 0.1.0
+      sync-microservice:
+        version: 0.1.8
+    name: 网关服务
+    upgraded: false
+    version: 1.2.0
+  login-microservice:
+    dependices:
+      account-microservice:
+        version: 0.1.10
+      auth-microservice:
+        version: 0.2.0
+      message-microservice:
+        version: 0.1.10
+    name: 登陆服务
+    upgraded: true
+    version: 0.2.1
+  message-microservice:
+    dependices:
+      account-microservice:
+        version: 0.1.10
+      auth-microservice:
+        version: 0.2.0
+    name: 消息服务
+    upgraded: true
+    version: 0.2.0
+  portal-microservice:
+    name: 页面服务
+    upgraded: true
+    version: 0.1.2
+  public-microservice:
+    name: 公共服务
+    upgraded: false
+    version: 0.1.0
+  sync-agent:
+    name: 同步代理服务
+    version: 0.0.3
+  sync-microservice:
+    dependices:
+      auth-microservice:
+        version: 0.2.0
+      fileserver-microservice:
+        version: 0.1.8
+      sync-agent:
+        version: 0.0.3
+    name: 同步服务
+    upgraded: true
+    version: 0.1.9
