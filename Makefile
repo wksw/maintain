@@ -77,7 +77,7 @@ BUILDIMAGE=$(BUILD_IMAGE)
 ifdef BUILD_IMAGE
 	BUILDIMAGE = $(BUILD_IMAGE)
 else
-	BUILDIMAGE = chassis_v2.0.2:build_latest
+	BUILDIMAGE = paasport/chassis_v2.0.2:build_base
 endif
 
 ## linux环境下包名
